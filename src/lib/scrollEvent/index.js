@@ -86,11 +86,11 @@ export default (ReactTable) => {
 
     updatePos(target = this.tableRef) {
       /* eslint-disable no-param-reassign */
-      target.querySelectorAll(`.${this.fixedLeftClassName}`).forEach((td) => {
+      [].forEach.call(target.querySelectorAll(`.${this.fixedLeftClassName}`), (td) => {
         td.style.transform = `translate3d(${this.nextTranslateLeftX}px, 0, 0)`;
       });
 
-      target.querySelectorAll(`.${this.fixedRightClassName}`).forEach((td) => {
+      [].forEach.call(target.querySelectorAll(`.${this.fixedRightClassName}`), (td) => {
         td.style.transform = `translate3d(${-this.nextTranslateRightX}px, 0, 0)`;
       });
       /* eslint-enable no-param-reassign */
